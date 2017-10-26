@@ -1,5 +1,4 @@
-//IMAGE TWO
-
+import processing.pdf.*;
 
 PImage cow;
 
@@ -9,7 +8,7 @@ void setup()
 {
   noStroke();
   background(255);
-  size(800, 800);
+  size(800, 800, PDF, "RecTwo.pdf");
   cow = loadImage("kao.png");
 }
 
@@ -24,10 +23,12 @@ void draw()
       pushMatrix();
       translate( i * 3, j * 3 );
       rotate(radians(frameCount + i + j));
-      color c = cow.get(i,j);
+      color c = cow.get(i, j);
       fill(c);
       rect(0, 0, 100, 10);
       popMatrix();
     }
   }
+  println("Finished.");
+  exit();
 }
